@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ReactTerminal, TerminalContextProvider } from 'react-terminal';
+import { useTerminalCommands } from './hooks/useTerminalCommands';
 
 // Definimos una estructura básica de directorios como un mapa
 const fileStructure: { [key: string]: string[] } = {
@@ -13,47 +14,7 @@ const fileStructure: { [key: string]: string[] } = {
 };
 
 export const Terminal: React.FC = () => {
-  const [currentPath, setCurrentPath] = useState<string>("/");
-
-  const getCurrentFolder = () => {
-    return fileStructure[currentPath] || [];
-  };
-
-  const commands = {
-    ls: () => {
-      const folderContent = getCurrentFolder();
-      return folderContent.length > 0 ? folderContent.join("  ") : "Directorio vacío";
-    },
-    cd: (directory: string) => {
-      if (directory === "..") {
-        // Moverse un directorio hacia arriba
-        const newPath = currentPath.split("/").slice(0, -1).join("/") || "/";
-        setCurrentPath(newPath);
-        return `Movido a: ${newPath}`;
-      } else {
-        // Navegar hacia una carpeta específica
-        const newPath = currentPath === "/" ? `/${directory}` : `${currentPath}/${directory}`;
-        if (fileStructure[newPath]) {
-          setCurrentPath(newPath);
-          return `Movido a: ${newPath}`;
-        }
-        return `Directorio '${directory}' no encontrado.`;
-      }
-    },
-    pwd: () => currentPath,
-    help: (
-      <div>
-        <p>Comandos disponibles:</p>
-        <ul>
-          <li><strong>ls</strong> - Lista archivos y directorios en el directorio actual</li>
-          <li><strong>cd [directorio]</strong> - Cambia de directorio</li>
-          <li><strong>pwd</strong> - Muestra la ruta del directorio actual</li>
-          <li><strong>help</strong> - Muestra los comandos disponibles</li>
-          <li><strong>clear</strong> - Limpia la terminal</li>
-        </ul>
-      </div>
-    ),
-  };
+  const [commands, currentPath] = useTerminalCommands();
 
   return (
     <TerminalContextProvider>
@@ -61,7 +22,7 @@ export const Terminal: React.FC = () => {
             <div className='h-min-[433px] max-h-screen w-min-[600px] w-3/4 h-3/4'>
                 <ReactTerminal
                     commands={commands}
-                    welcomeMessage={<span>Bienvenido al terminal de React! Usa 'help' para ver los comandos disponibles.<br/></span>}
+                    welcomeMessage={<span>Usa 'help' para ver los comandos disponibles.<br/></span>}
                     prompt={`${currentPath}$ `}
                     theme="material-dark"   
                     errorMessage="Comando no encontrado. Usa 'help' para ver los comandos disponibles."
