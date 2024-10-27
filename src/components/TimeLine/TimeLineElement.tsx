@@ -11,7 +11,7 @@ interface TimelineElementProps {
   iconStyle: React.CSSProperties;
   contentStyle?: React.CSSProperties;
   arrowStyle?: React.CSSProperties;
-  type: "work" | "education" | "final";
+  type: "history" | "education" | "final";
 }
 
 const TimelineElement: React.FC<TimelineElementProps> = ({
@@ -27,17 +27,17 @@ const TimelineElement: React.FC<TimelineElementProps> = ({
   return (
     <div>
         <VerticalTimelineElement
-      className={`vertical-timeline-element--${type}`}
-      date={date}
-      iconStyle={iconStyle}
-      contentStyle={contentStyle || {}}
-      contentArrowStyle={arrowStyle || {}}
-      icon={<Star />}
-    >
-      {title && <h3 className="vertical-timeline-element-title">{title}</h3>}
-      {subtitle && <h4 className="vertical-timeline-element-subtitle">{subtitle}</h4>}
-      {description && <p>{description}</p>}
-    </VerticalTimelineElement>
+            className={`vertical-timeline-element--${type}`}
+            date={date}
+            iconStyle={iconStyle}
+            contentStyle={contentStyle || {}}
+            contentArrowStyle={arrowStyle || {}}
+            icon={<Star />}
+        >
+            {title && <h3 className="vertical-timeline-element-title">{title}</h3>}
+            {subtitle && <h4 className="vertical-timeline-element-subtitle">{subtitle}</h4>}
+            {description && <p>{description}</p>}
+        </VerticalTimelineElement>
     </div>
   );
 };

@@ -1,14 +1,31 @@
 'use client';
 
-import Image from "next/image";
-import { TimeLine } from './components/TimeLine';
-import { Terminal } from './components/Terminal';
+import React from 'react';
+// Importa los componentes que has creado
+import HeaderComponent from '../components/HeaderNav';
+import MainComponent from '../components/Main';
+import FeaturesComponent from '../components/Features';
+import PreviewComponent from '../components/Preview';
+import LayoutComponent from '@/components/Layout';
+import Terminal from '@/components/Terminal';
+import { TimeLine } from '@/components/TimeLine';
 
-export default function Home() {
+// Componente de página Home que ensambla todos los componentes
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      {/* <TimeLine />  */}
-      <Terminal />
+    <div className="relative h-screen">
+      <HeaderComponent />
+      <LayoutComponent>
+        <MainComponent />
+      </LayoutComponent>
+      <LayoutComponent className="h-[auto]">
+        <TimeLine />
+      </LayoutComponent>
+      <LayoutComponent>
+        <Terminal />
+      </LayoutComponent>
     </div>
   );
 }
+
+export default Home;

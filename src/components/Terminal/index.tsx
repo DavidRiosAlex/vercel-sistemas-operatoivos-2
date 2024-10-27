@@ -13,14 +13,12 @@ const fileStructure: { [key: string]: string[] } = {
 };
 
 export const Terminal: React.FC = () => {
-  const [currentPath, setCurrentPath] = useState<string>("/"); // Ruta actual
+  const [currentPath, setCurrentPath] = useState<string>("/");
 
-  // Obtiene el contenido de la carpeta actual
   const getCurrentFolder = () => {
     return fileStructure[currentPath] || [];
   };
 
-  // Manejo de comandos
   const commands = {
     ls: () => {
       const folderContent = getCurrentFolder();
@@ -59,13 +57,17 @@ export const Terminal: React.FC = () => {
 
   return (
     <TerminalContextProvider>
-      <ReactTerminal
-        commands={commands}
-        welcomeMessage="Bienvenido al terminal de React! Usa 'help' para ver los comandos disponibles."
-        prompt={`${currentPath}$ `}
-        theme="material-dark"
-        errorMessage="Comando no encontrado. Usa 'help' para ver los comandos disponibles."
-      />
+        <div id="terminal" className="w-full h-full flex justify-center items-center py-1">
+            <div className='h-min-[433px] max-h-screen w-min-[600px] w-3/4 h-3/4'>
+                <ReactTerminal
+                    commands={commands}
+                    welcomeMessage={<span>Bienvenido al terminal de React! Usa 'help' para ver los comandos disponibles.<br/></span>}
+                    prompt={`${currentPath}$ `}
+                    theme="material-dark"   
+                    errorMessage="Comando no encontrado. Usa 'help' para ver los comandos disponibles."
+                />
+            </div>
+        </div>
     </TerminalContextProvider>
   );
 };
