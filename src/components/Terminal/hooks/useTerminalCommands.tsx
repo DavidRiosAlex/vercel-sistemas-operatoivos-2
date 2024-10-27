@@ -79,6 +79,9 @@ export const useTerminalCommands = (): [Commands, string] => {
           <li><strong>ls</strong> - Lists files and directories in the current directory</li>
           <li><strong>cd [directory]</strong> - Changes directory</li>
           <li><strong>mkdir [folder]</strong> - Creates a new folder</li>
+          <li><strong>touch [file]</strong> - Creates a new folder</li>
+          <li><strong>nano [file]</strong> - Creates a new folder</li>
+          <li><strong>cat [file]</strong> - Creates a new folder</li>
           <li><strong>pwd</strong> - Displays the current directory path</li>
           <li><strong>help</strong> - Displays this help message</li>
           <li><strong>clear</strong> - Clears the terminal</li>
