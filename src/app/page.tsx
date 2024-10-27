@@ -22,6 +22,9 @@ const Home = () => {
       <LayoutComponent>
         <Terminal />
       </LayoutComponent>
+      <LayoutComponent id="conclusion">
+        <Conclusion />
+      </LayoutComponent>
     </div>
   );
 }

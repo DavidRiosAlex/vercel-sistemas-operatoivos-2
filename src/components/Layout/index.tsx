@@ -1,8 +1,8 @@
 import React from 'react';
 
-const LayoutComponent = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => {
+const LayoutComponent = ({ children, className = "", id }: { children: React.ReactNode, className?: string, id?: string }) => {
     return (
-        <div className={`w-screen h-screen ${className}`}>
+        <div id={id} className={`w-screen h-screen ${className}`}>
             {children}
         </div>
     )
