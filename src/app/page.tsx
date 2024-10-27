@@ -7,6 +7,7 @@ import MainComponent from '../components/Main';
 import LayoutComponent from '@/components/Layout';
 import Terminal from '@/components/Terminal';
 import { TimeLine } from '@/components/TimeLine';
+import Conclusion from '@/components/Conclusion';
 
 // Componente de página Home que ensambla todos los componentes
 const Home = () => {
