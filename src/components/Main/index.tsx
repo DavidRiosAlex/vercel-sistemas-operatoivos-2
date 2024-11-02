@@ -1,5 +1,6 @@
 import React from 'react';
 import PreviewComponent from '../Preview';
+import LinuxIcon from '@/assets/Linux';
 
 const MainComponent = () => {
   return (
@@ -8,7 +9,9 @@ const MainComponent = () => {
       <p className="text-gray-600 mt-4 max-w-xl">
         Descubre el universo de Linux, desde sus humildes inicios hasta convertirse en el motor que impulsa la innovación en tecnologías de la información. Acompáñanos en un viaje a través de su rica historia, comprende cómo funciona su robusto sistema y explora cómo Linux está modelando el futuro de la inteligencia artificial, Kubernetes y Docker.
       </p>
-      <PreviewComponent />
+      <PreviewComponent>
+        <LinuxIcon />
+      </PreviewComponent>
     </main>
   );
 }

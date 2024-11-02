@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+        width:{
+          'custom': 'auto',
+        },
+        height:{
+          'custom': 'auto',
+        },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
