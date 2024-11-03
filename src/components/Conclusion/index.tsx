@@ -8,20 +8,19 @@ const Conclusion = () => {
         <LayoutComponent className="p-10 !h-auto">
             <HeaderComponent actualTab="Conclusion" /> 
             <div className="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-                <h1 className="text-2xl font-bold text-blue-600 mb-4">Conclusión: Linux en Desarrollo Web</h1>
+                <h1 className="text-2xl font-bold text-blue-600 mb-4">Conclusión: Linux en Desarrollo de aplicaciones</h1>
 
                 <div className="mb-6">
                 <p className="text-lg">
-                    Después de analizar Linux en profundidad, como grupo de estudiantes 
-                    de la tecnicatura en software, creemos que es una opción ideal para el 
-                    desarrollo web por varias razones que nos parecen muy relevantes.
+                    Después de analizar Linux en profundidad, creemos que es una opción ideal para el 
+                    desarrollo por varias razones que nos parecen muy relevantes.
                 </p>
                 </div>
 
                 <div className="mb-6">
                 <p className="text-lg">
                     Primero, nos dimos cuenta de que Linux se lleva muy bien con todas las 
-                    herramientas clave en desarrollo web. Ya sea que estemos trabajando con 
+                    herramientas clave en desarrollo de aplicaciones. Ya sea que estemos trabajando con 
                     servidores web, aplicaciones en general, o con herramientas de control de versiones 
                     como Git y plataformas de contenedores como Docker. Al desarrollar en Linux, estamos trabajando 
                     en un entorno que se parece mucho al que usan los servidores de producción. 
