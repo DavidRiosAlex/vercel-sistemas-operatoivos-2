@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { ReactTerminal, TerminalContextProvider } from 'react-terminal';
 import { useTerminalCommands } from './hooks/useTerminalCommands';
 
@@ -14,7 +14,7 @@ export const Terminal: React.FC = () => {
             <div className='h-min-[433px] max-h-screen w-min-[600px] w-3/4 h-3/4'>
                 <ReactTerminal
                     commands={commands}
-                    welcomeMessage={<span>Usa 'help' para ver los comandos disponibles.<br/></span>}
+                    welcomeMessage={<span>Usa &apos;help&apos; para ver los comandos disponibles.<br/></span>}
                     prompt={`${currentPath}$ `}
                     theme="material-dark"   
                     errorMessage="Comando no encontrado. Usa 'help' para ver los comandos disponibles."

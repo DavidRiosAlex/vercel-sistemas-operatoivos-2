@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 import React, { useCallback, useState } from 'react';
 
 interface FileStructure {

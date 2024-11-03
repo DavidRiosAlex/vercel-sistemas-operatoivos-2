@@ -33,7 +33,7 @@ const SuperComputadorasYLinux = () => {
             <br />
             Linux, al ser un sistema operativo de código abierto, reduce los costos asociados con licencias de software propietario. Esto es especialmente relevante en el contexto de supercomputadoras, donde el software puede representar una parte significativa del presupuesto operativo.
             <br /> 
-            Fuentes: <a href='https://www.networkworld.com/article/968995/linux-dominates-supercomputing.html' target='_blank' rel="noopener noreferrer"><strong>Network World, </strong></a><a href='https://www.stackscale.com/blog/most-powerful-supercomputers-linux/' target='_blank' rel="noopener noreferrer"><strong>Stackscale, </strong></a> <a href='https://www.redhat.com/en/blog/red-hat-enterprise-linux-builds-foundation-worlds-fastest-supercomputers' target='_blank' rel="noopener noreferrer"><strong>The world's open source leader,  </strong></a> <a href=''></a>
+            Fuentes: <a href='https://www.networkworld.com/article/968995/linux-dominates-supercomputing.html' target='_blank' rel="noopener noreferrer"><strong>Network World, </strong></a><a href='https://www.stackscale.com/blog/most-powerful-supercomputers-linux/' target='_blank' rel="noopener noreferrer"><strong>Stackscale, </strong></a> <a href='https://www.redhat.com/en/blog/red-hat-enterprise-linux-builds-foundation-worlds-fastest-supercomputers' target='_blank' rel="noopener noreferrer"><strong>The world&apos;s open source leader,  </strong></a> <a href=''></a>
             </p>
         </main>
     )

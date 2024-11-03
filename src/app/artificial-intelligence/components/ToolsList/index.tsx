@@ -1,5 +1,4 @@
 import React from "react";
-import ImageDescriptionSection from "@/components/commons/ImageDescriptionSection";
 import Image from "next/image";
 
 interface Tool {
@@ -68,7 +67,7 @@ const ToolsList: React.FC = () => {
     return (
         <div className="container mx-auto px-4 items-center  space-y-12">
             <h1 className="text-3xl font-bold text-gray-800 my-8">Herramientas de Machine Learning en Linux</h1>
-            {tools.map((tool, index) => (
+            {tools.map((tool) => (
                 <div key={tool.title}>
                     <div className="flex flex-col items-center justify-center space-y-6">
                         <h2 className="text-2xl font-bold text-gray-800">

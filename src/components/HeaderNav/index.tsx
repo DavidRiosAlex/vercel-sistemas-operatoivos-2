@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Header({ actualTab }: { actualTab: 'Home' | 'Conclusion' | 'Inteligencia Artificial' | 'Playground' }) {
@@ -28,20 +29,20 @@ export default function Header({ actualTab }: { actualTab: 'Home' | 'Conclusion'
 
         {/* Desktop Navigation */}
         <ul className="hidden sm:flex gap-8 w-auto justify-between ">
-          <li><a href="/" className="text-gray-800 hover:text-gray-600">Home</a></li>
-          <li><a href="/artificial-intelligence" className="text-gray-800 hover:text-gray-600">Inteligencia Artificial</a></li>
-          <li><a href="/conclusion" className="text-gray-800 hover:text-gray-600">Conclusion</a></li>
-          <li><a href="/playground" className="text-gray-800 hover:text-gray-600">Playground</a></li>
+          <li><Link href="/" className="text-gray-800 hover:text-gray-600">Home</Link></li>
+          <li><Link href="/artificial-intelligence" className="text-gray-800 hover:text-gray-600">Inteligencia Artificial</Link></li>
+          <li><Link href="/conclusion" className="text-gray-800 hover:text-gray-600">Conclusion</Link></li>
+          <li><Link href="/playground" className="text-gray-800 hover:text-gray-600">Playground</Link></li>
         </ul>
       </nav>
 
       {/* Mobile Navigation */}
       {isOpen && (
         <ul className="flex flex-col items-center gap-6 mt-4 sm:hidden">
-          <li><a href="/" className="text-gray-800 hover:text-gray-600">Home</a></li>
-          <li><a href="/artificial-intelligence" className="text-gray-800 hover:text-gray-600">Inteligencia Artificial</a></li>
-          <li><a href="/conclusion" className="text-gray-800 hover:text-gray-600">Conclusion</a></li>
-          <li><a href="/playground" className="text-gray-800 hover:text-gray-600">Playground</a></li>
+          <li><Link href="/" className="text-gray-800 hover:text-gray-600">Home</Link></li>
+          <li><Link href="/artificial-intelligence" className="text-gray-800 hover:text-gray-600">Inteligencia Artificial</Link></li>
+          <li><Link href="/conclusion" className="text-gray-800 hover:text-gray-600">Conclusion</Link></li>
+          <li><Link href="/playground" className="text-gray-800 hover:text-gray-600">Playground</Link></li>
         </ul>
       )}
     </header>

@@ -105,7 +105,7 @@ const UseCase = () => {
             <LayoutComponent className="container mx-auto text-center px-10 flex h-full flex-col py-2 !h-auto">
                 <h1 className="text-4xl font-bold text-gray-800">Distribuciones linux</h1>
                 <p className="text-gray-600 mt-8 mb-8">
-                    Las distribuciones de Linux (o "distros") son versiones personalizadas del sistema
+                    Las distribuciones de Linux (o distros) son versiones personalizadas del sistema
                     operativo Linux que incluyen el núcleo de Linux junto con una combinación de
                     software, herramientas y configuraciones específicas. Cada distribución está diseñada
                     con un propósito particular, ofreciendo diferentes entornos de usuario, niveles de

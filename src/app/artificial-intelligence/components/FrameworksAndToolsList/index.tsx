@@ -1,4 +1,3 @@
-import ImageDescriptionSection from "@/components/commons/ImageDescriptionSection";
 import Image from "next/image";
 
 const frameworksAndTools = [
@@ -71,7 +70,7 @@ const frameworksAndTools = [
 const FrameworksAndToolsList: React.FC = () => {
     return (
         <div className="container mx-auto px-4 w-full flex flex-col items-center">
-            {frameworksAndTools.map((tool, index) => (
+            {frameworksAndTools.map((tool) => (
                 <div className="flex flex-col w-full items-center" key={tool.title}>
                     <h2 className="text-2xl font-bold text-gray-800 items-center">{tool.title}</h2>
                     <Image src={tool.img} alt={'imagen de ' + tool.title} width={400} height={400} />

@@ -6,8 +6,6 @@ import MainComponent from '../components/Main';
 import LayoutComponent from '@/components/commons/Layout';
 import { TimeLine } from '@/components/TimeLine';
 import UseCase from '@/components/CasosDeUso';
-import SuperComputadorasYLinux from '@/components/SuperComputadoras';
-import Slider from '@/components/Swipper';
 import Head from 'next/head';
 
 const Home = () => {
