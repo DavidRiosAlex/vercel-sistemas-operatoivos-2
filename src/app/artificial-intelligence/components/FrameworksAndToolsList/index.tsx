@@ -85,9 +85,12 @@ const FrameworksAndToolsList: React.FC = () => {
                         </ul>
 
                         <h3 className="text-xl font-semibold text-gray-800 mt-4">Casos de Uso</h3>
-                        <ul className="list-disc list-inside ml-4 space-y-1">
+                        <ul className="list-disc list-inside ml-4 space-y-1 grid grid-cols-3 h-auto">
                             {tool.useCases.map((useCase, i) => (
-                                <li key={i}>{useCase}</li>
+                                <li
+                                    key={i}
+                                    className="list-none bg-white rounded-lg shadow-md p-4 border border-gray-200 hover:shadow-lg"
+                                >{useCase}</li>
                             ))}
                         </ul>
 

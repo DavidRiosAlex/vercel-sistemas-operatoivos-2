@@ -48,8 +48,8 @@ const caracteristicasUbuntu = [
         title: 'Soporte de la Comunidad y LTS',
         description: 'Ubuntu ofrece versiones LTS (Long-Term Support) con actualizaciones de seguridad durante cinco años, lo cual es ideal para desarrolladores que buscan estabilidad a largo plazo. Además, Ubuntu cuenta con una amplia comunidad de usuarios, lo que significa que es fácil encontrar soluciones y documentación en línea para resolver problemas específicos de desarrollo.',
         link: {
-            label: 'Configuraciones ubuntu',
-            href: 'https://help.ubuntu.com/stable/ubuntu-help/prefs.html.es'
+            label: 'Soporte',
+            href: 'https://ubuntu.com/community/support'
         }
     },
     {
@@ -57,8 +57,8 @@ const caracteristicasUbuntu = [
         title: 'Compatibilidad con Herramientas de Desarrollo',
         description: 'Muchas herramientas y bibliotecas de desarrollo están optimizadas o fácilmente disponibles en Ubuntu. El sistema operativo cuenta con soporte nativo para administradores de paquetes como apt, que facilita la instalación y gestión de herramientas como Git, Docker, Node.js, y Python, entre otras.',
         link: {
-            label: 'Configuraciones ubuntu',
-            href: 'https://help.ubuntu.com/stable/ubuntu-help/prefs.html.es'
+            label: 'Store de aplicaciones para desarrollo',
+            href: 'https://snapcraft.io/store?categories=development'
         }
     },
     {
@@ -130,7 +130,7 @@ const UseCase = () => {
                 </Swipper>
             </LayoutComponent>
             <LayoutComponent className="!h-auto bg-white shadow-lg py-12">
-                <div className="h-screen w-full flex py-20 flex-col">
+                <div className="w-full flex py-20 flex-col">
                     <h2 className="text-3xl text-center font-semibold mb-12">Nuestra Eleccion</h2>
                     <p className="text-center mb-12">
                         Ambos integrantes del grupo usamos ubuntu como sistema operativo para
@@ -158,21 +158,23 @@ const UseCase = () => {
                     )
                 )}
             </LayoutComponent>
-            <LayoutComponent className="bg-slate-200 !h-auto">
-                <div className="flex flex-col w-full h-full text-center align-center justify-evenly">
-                    <h2 className="text-2xl font-bold">Ventajas de ubuntu para el desarrollo de software</h2>
-                    <section className="flex flex-col align-center justify-center space-x-12 sm:flex-row">
-                        {ventajasUbuntu.map((ventaja) => (
-                            <Card key={ventaja.title} className="p-8">
-                                <Card.Title>
-                                    {ventaja.title}
-                                </Card.Title>
-                                <Card.CardImg src={ventaja.img.src} alt={ventaja.img.alt} />
-                                <Card.CardDescription>
-                                    {ventaja.description}
-                                </Card.CardDescription>
-                            </Card>
-                        ))}
+            <LayoutComponent className="bg-slate-200 p-4 sm:p-8">
+                <div className="flex flex-col w-full h-full text-center items-center justify-evenly space-y-8">
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">
+                    Ventajas de Ubuntu para el desarrollo de software
+                    </h2>
+                    <section className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-8">
+                    {ventajasUbuntu.map((ventaja) => (
+                        <Card key={ventaja.title} className="flex flex-col p-4 sm:p-6 lg:p-8 bg-white shadow-lg rounded-lg w-full sm:w-1/2 lg:w-1/3 max-w-sm">
+                        <Card.Title className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4">
+                            {ventaja.title}
+                        </Card.Title>
+                        <Card.CardImg className="w-full h-40 object-cover rounded-md mb-4" src={ventaja.img.src} alt={ventaja.img.alt} />
+                        <Card.CardDescription className="text-sm sm:text-base lg:text-lg text-gray-700">
+                            {ventaja.description}
+                        </Card.CardDescription>
+                        </Card>
+                    ))}
                     </section>
                 </div>
             </LayoutComponent>

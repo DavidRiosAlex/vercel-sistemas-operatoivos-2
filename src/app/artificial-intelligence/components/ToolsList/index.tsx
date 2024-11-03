@@ -2,7 +2,6 @@ import React from "react";
 import ImageDescriptionSection from "@/components/commons/ImageDescriptionSection";
 import Image from "next/image";
 
-// Definir el tipo de propiedad para cada herramienta
 interface Tool {
     title: string;
     link: { label: string, link: string };
@@ -12,7 +11,6 @@ interface Tool {
     applications: string[];
 }
 
-// Lista de herramientas de aprendizaje automático en Linux
 const tools: Tool[] = [
     {
         title: "Jupyter Notebook",

@@ -4,7 +4,6 @@ import { VerticalTimeline } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import TimelineElement from './TimeLineElement';
 
-// Define the type for timeline data items
 interface TimelineDataItem {
   title: string;
   subtitle: string;
@@ -20,7 +19,6 @@ interface TimelineDataItem {
   type: "history" | "education" | 'no-children';
 }
 
-// Define the timeline data
 const timelineData: TimelineDataItem[] = [
     {
       title: "GNU Project Foundation",

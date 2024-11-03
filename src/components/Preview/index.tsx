@@ -1,12 +1,13 @@
 import React, { ReactNode } from 'react';
 
 interface PreviewComponentProps {
-  children: ReactNode
+  children: ReactNode;
+  className?: string;
 }
 
-const PreviewComponent = ({ children }: PreviewComponentProps) => {
+const PreviewComponent = ({ children, className='' }: PreviewComponentProps) => {
   return (
-    <div className="absolute w-[400px] bottom-12 right-12 opacity-75">
+    <div className={"relative sm:absolute w-[400px] sm:bottom-12 sm:right-12 opacity-75 " + className}>
       {children}
     </div>
   );

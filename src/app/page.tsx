@@ -8,12 +8,15 @@ import { TimeLine } from '@/components/TimeLine';
 import UseCase from '@/components/CasosDeUso';
 import SuperComputadorasYLinux from '@/components/SuperComputadoras';
 import Slider from '@/components/Swipper';
+import Head from 'next/head';
 
-// Componente de página Home que ensambla todos los componentes
 const Home = () => {
   return (
     <div className="relative h-screen">
-      <HeaderComponent />
+      <Head>
+        <title>Home</title>
+      </Head>
+      <HeaderComponent actualTab={'Home'} />
       <LayoutComponent>
         <MainComponent />
       </LayoutComponent>

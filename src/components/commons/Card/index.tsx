@@ -9,28 +9,24 @@ const Card = ({ children, className }: { children: ReactNode, className?: string
     )
 };
 
-// Subcomponente para la imagen de la tarjeta
-Card.CardImg = ({ src, alt }: { src: string, alt: string }) => (
+Card.CardImg = ({ src, alt }: { src: string, alt: string, className?: string  }) => (
     <Image className="w-full" src={src} alt={alt} width={600} height={600} />
 );
 
-// Subcomponente para el título de la tarjeta
-Card.Title = ({ children }: { children: ReactNode }) => (
-    <div className="font-bold text-xl mb-2">
+Card.Title = ({ children, className }: { children: ReactNode, className?: string }) => (
+    <div className={"font-bold text-xl mb-2 " + className}>
         {children}
     </div>
 );
 
-// Subcomponente para la descripción de la tarjeta
-Card.CardDescription = ({ children }: { children: ReactNode }) => (
-    <p className="text-gray-700 text-base">
+Card.CardDescription = ({ children, className }: { children: ReactNode, className?: string }) => (
+    <p className={"text-gray-700 text-base " + className}>
         {children}
     </p>
 );
 
-// Subcomponente para los tags en el pie de la tarjeta
-Card.CardFooter = ({ tags }: { tags: { label: string, link?: string }[] }) => (
-    <div className="px-6 pt-4 pb-2">
+Card.CardFooter = ({ tags, className }: { tags: { label: string, link?: string }[], className?: string  }) => (
+    <div className={"px-6 pt-4 pb-2 " + className}>
         {tags.map((tag, index) => (
             <a key={index} href={tag.link} target="_blank">
                 <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">

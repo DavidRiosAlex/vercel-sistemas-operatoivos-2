@@ -6,7 +6,7 @@ const Conclusion = () => {
 
     return (
         <LayoutComponent className="p-10 !h-auto">
-            <HeaderComponent /> 
+            <HeaderComponent actualTab="Conclusion" /> 
             <div className="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
                 <h1 className="text-2xl font-bold text-blue-600 mb-4">Conclusión: Linux en Desarrollo Web</h1>
 

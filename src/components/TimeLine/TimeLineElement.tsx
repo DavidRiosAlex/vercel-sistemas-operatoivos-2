@@ -2,7 +2,6 @@ import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import Star from '@mui/icons-material/Star';
 import React from 'react';
 
-// Define types for TimelineElement props
 interface TimelineElementProps {
   title?: string;
   subtitle?: string;
