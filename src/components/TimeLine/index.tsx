@@ -133,6 +133,7 @@ const timelineData: TimelineDataItem[] = [
 export const TimeLine: React.FC = () => {
   return (
     <div id="history" className='w-full h-full'>
+      <hr />
       <VerticalTimeline layout="1-column-left" className=" flex flex-col gap-y-10">
         {timelineData.map((item, index) => (
           <TimelineElement
@@ -155,6 +156,7 @@ export const TimeLine: React.FC = () => {
           visible={false}
         />
       </VerticalTimeline>
+      <hr />
     </div>
   );
 };

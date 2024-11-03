@@ -9,18 +9,21 @@ export const Terminal: React.FC = () => {
 
   return (
     <TerminalContextProvider>
-        <div id="terminal" className="w-full h-[600px] sm:h-full flex flex-col gap-10 justify-center items-center text-center py-1">
-            <h1 className="text-2xl font-bold">Playground</h1>
-            <div className='h-min-[433px] max-h-screen w-min-[600px] w-3/4 h-3/4'>
-                <ReactTerminal
-                    commands={commands}
-                    welcomeMessage={<span>Usa &apos;help&apos; para ver los comandos disponibles.<br/></span>}
-                    prompt={`${currentPath}$ `}
-                    theme="material-dark"   
-                    errorMessage="Comando no encontrado. Usa 'help' para ver los comandos disponibles."
-                />
-            </div>
-        </div>
+          <div id="terminal" className="w-full h-[600px] sm:h-full flex flex-col gap-10 justify-center items-center text-center py-1">
+              <h1 className="text-2xl font-bold">Playground</h1>
+              <div className='h-min-[433px] max-h-screen w-min-[600px] w-3/4 h-3/4'>
+                  <ReactTerminal
+                      commands={commands}
+                      welcomeMessage={<span>
+                        Usa &apos;help&apos; para ver los comandos disponibles.<br />
+                        Nota: Esta terminal fue incluida para hacer una demostración de algunos de los comandos vistos en la clase de Sistemas Operativos. Ten en cuenta que puede no contener todos los comandos de una terminal Linux estándar debido a limitaciones de tiempo y alcance.<br />
+                      </span>}
+                      prompt={`${currentPath}$ `}
+                      theme="material-dark"   
+                      errorMessage="Comando no encontrado. Usa 'help' para ver los comandos disponibles."
+                  />
+              </div>
+          </div>
     </TerminalContextProvider>
   );
 };
