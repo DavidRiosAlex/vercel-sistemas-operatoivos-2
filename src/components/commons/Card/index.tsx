@@ -1,26 +1,44 @@
-const Card = () => {
+import Image from "next/image";
+import { ReactNode } from "react";
+
+const Card = ({ children, className }: { children: ReactNode, className?: string }) => {
     return (
-        <div className="max-w-sm w-full lg:max-w-full lg:flex">
-          <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"  title="">
+        <div className={`max-w-sm min-w-[350px] min-h-[500px] h-full flex flex-col justify-between align-center rounded overflow-hidden shadow-lg bg-white ${className}`}>
+            {children}
         </div>
-        <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-            <div className="mb-8">
-            <p className="text-sm text-gray-600 flex items-center">
-                <svg className="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-                </svg>
-            
-            </p>
-            <div className="text-gray-900 font-bold text-xl mb-2"></div>
-            <p className="text-gray-700 text-base"></p>
-            </div>
-            <div className="flex items-center">
-            <div className="text-sm">
-                <p className="text-gray-900 leading-none"></p>
-                <p className="text-gray-600"></p>
-            </div>
-            </div>
-        </div>
-        </div>
-    );
-}
+    )
+};
+
+// Subcomponente para la imagen de la tarjeta
+Card.CardImg = ({ src, alt }: { src: string, alt: string }) => (
+    <Image className="w-full" src={src} alt={alt} width={600} height={600} />
+);
+
+// Subcomponente para el título de la tarjeta
+Card.Title = ({ children }: { children: ReactNode }) => (
+    <div className="font-bold text-xl mb-2">
+        {children}
+    </div>
+);
+
+// Subcomponente para la descripción de la tarjeta
+Card.CardDescription = ({ children }: { children: ReactNode }) => (
+    <p className="text-gray-700 text-base">
+        {children}
+    </p>
+);
+
+// Subcomponente para los tags en el pie de la tarjeta
+Card.CardFooter = ({ tags }: { tags: { label: string, link?: string }[] }) => (
+    <div className="px-6 pt-4 pb-2">
+        {tags.map((tag, index) => (
+            <a key={index} href={tag.link} target="_blank">
+                <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                    {tag.label}
+                </span>
+            </a>
+        ))}
+    </div>
+);
+
+export default Card;

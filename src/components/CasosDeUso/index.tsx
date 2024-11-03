@@ -1,51 +1,190 @@
 import React from "react";
+import LayoutComponent from "../commons/Layout";
+import Swipper from "../Swipper";
+import Card from "../commons/Card";
+import ImageDescriptionSection from "../commons/ImageDescriptionSection";
+import DeveloperTools from '../DeveloperTools';
+import HPCComponent from "../HCP";
 
-const CasosDeUso = () => {
+const distros = [
+    {
+        title: "Ubuntu",
+        content: "Ubuntu es una distribución de Linux fácil de usar, basada en Debian. Es ideal para principiantes y ofrece una experiencia de usuario amigable con actualizaciones frecuentes y una gran comunidad de soporte.",
+        img: '/distros/ubuntu-background.png',
+        tags: [{ link: "https://ubuntu.com", label: 'Ubuntu Pagina' }]
+    },
+    {
+        title: "CentOS",
+        content: "CentOS es una distribución de Linux enfocada en servidores y entornos corporativos. Basada en Red Hat Enterprise Linux (RHEL), ofrece estabilidad y seguridad para aplicaciones empresariales.",
+        img: '/distros/centos-background.png',
+        tags: [{ link: "https://www.centos.org", label: 'CentOS Pagina' }]
+    },
+    {
+        title: "Kali Linux",
+        content: "Kali Linux es una distribución especializada en seguridad informática y pruebas de penetración. Incluye una amplia gama de herramientas para auditoría de seguridad y análisis de vulnerabilidades.",
+        img: '/distros/kali-background.png',
+        tags: [{ link: "https://www.kali.org", label: 'Kali Pagina' }]
+    },
+    {
+        title: "Debian",
+        content: "Debian es una de las distribuciones de Linux más estables y confiables. Con un enfoque en la libertad de software, es la base de muchas otras distribuciones, incluida Ubuntu.",
+        img: '/distros/debian-background.png',
+        tags: [{ link: "https://www.debian.org", label: 'Debian Pagina' }]
+    }
+];
+
+const caracteristicasUbuntu = [
+    {
+        img: '/nuestra-eleccion/configuracion-ubuntu.png',
+        title: 'Facilidad de configuración',
+        description: 'Ubuntu tiene un proceso de instalación muy sencillo y una interfaz intuitiva que permite a los desarrolladores comenzar rápidamente. A diferencia de distribuciones más minimalistas como Arch Linux o Fedora, Ubuntu incluye muchas aplicaciones y controladores preinstalados, por lo que la mayoría de los desarrolladores pueden empezar a trabajar de inmediato sin necesidad de configuraciones avanzadas.',
+        link: {
+            label: 'Configuraciones ubuntu',
+            href: 'https://help.ubuntu.com/stable/ubuntu-help/prefs.html.es'
+        }
+    },
+    {
+        img: '/nuestra-eleccion/soporte-lts-comunidad.png',
+        title: 'Soporte de la Comunidad y LTS',
+        description: 'Ubuntu ofrece versiones LTS (Long-Term Support) con actualizaciones de seguridad durante cinco años, lo cual es ideal para desarrolladores que buscan estabilidad a largo plazo. Además, Ubuntu cuenta con una amplia comunidad de usuarios, lo que significa que es fácil encontrar soluciones y documentación en línea para resolver problemas específicos de desarrollo.',
+        link: {
+            label: 'Configuraciones ubuntu',
+            href: 'https://help.ubuntu.com/stable/ubuntu-help/prefs.html.es'
+        }
+    },
+    {
+        img: '/nuestra-eleccion/compatibilidades-ubuntu.png',
+        title: 'Compatibilidad con Herramientas de Desarrollo',
+        description: 'Muchas herramientas y bibliotecas de desarrollo están optimizadas o fácilmente disponibles en Ubuntu. El sistema operativo cuenta con soporte nativo para administradores de paquetes como apt, que facilita la instalación y gestión de herramientas como Git, Docker, Node.js, y Python, entre otras.',
+        link: {
+            label: 'Configuraciones ubuntu',
+            href: 'https://help.ubuntu.com/stable/ubuntu-help/prefs.html.es'
+        }
+    },
+    {
+        img: '/nuestra-eleccion/entorno-productivo.jpeg',
+        title: 'Entorno de Trabajo Productivo',
+        description: 'Ubuntu ofrece una excelente integración con servicios en la nube, Docker, y entornos de contenedores, lo que facilita el trabajo en aplicaciones de desarrollo modernas, desde desarrollo local hasta implementación en producción.',
+        link: {
+            label: 'Configuraciones ubuntu',
+            href: 'https://help.ubuntu.com/stable/ubuntu-help/prefs.html.es'
+        }
+    }
+];
+
+const ventajasUbuntu = [
+    {
+        title: 'Administrador de Paquetes APT',
+        img: {
+            src: '/ventajas/paquetes.webp',
+            alt: ''
+        },
+        description: 'El sistema APT permite una fácil instalación de paquetes y actualizaciones de software, ideal para mantener el entorno de desarrollo actualizado.'
+    },
+    {
+        title: 'Compatibilidad con Docker y Virtualización',
+        img: {
+            src: '/ventajas/compatibilidad.png',
+            alt: 'docker logo'
+        },
+        description: 'Ubuntu es ampliamente compatible con Docker y tecnologías de virtualización, lo cual permite probar aplicaciones en entornos aislados o simular configuraciones de producción de manera sencilla.'
+    },
+    {
+        title: 'Amplio Soporte para SDKs y Librerías',
+        img: {
+            src: '/ventajas/soporte.svg',
+            alt: 'imagen de soporte'
+        },
+        description: 'Desde herramientas de ciencia de datos como TensorFlow y PyTorch hasta frameworks web como Django y Node.js, Ubuntu proporciona soporte extenso y es el sistema operativo recomendado por muchas de estas herramientas.'
+    }
+];
+
+const UseCase = () => {
     return (
-        <main className="container mx-auto text-left px-10 flex h-full flex-col py-36">
-            <h1 className="text-4xl font-bold text-gray-800"> Casos de uso en Familias o Desarrolladores</h1>
-            <p className="text-gray-600 mt-4 max-w-xl">
-                
-            <strong>• Para un Desarrollador: Ubuntu</strong><br />
-<br />           
-            <strong>Justificación y Ventajas</strong><br />
-            Para un desarrollador de sistemas, Ubuntu es una excelente opción debido a su estabilidad, amplio soporte y facilidad de uso. Ubuntu es conocido por su interfaz amigable y por ser una de las distribuciones más populares, lo que asegura un vasto ecosistema de soporte y documentación. Estas características lo hacen ideal tanto para desarrolladores experimentados como para aquellos que recién inician en Linux.<br />
-<br />           
-            <strong>• Amplia Compatibilidad:</strong> Ubuntu es compatible con la mayoría del hardware y software moderno, facilitando la integración de herramientas y aplicaciones necesarias para el desarrollo de software.<br />
-            <strong>• Soporte de Larga Duración:</strong> Las versiones LTS (Long Term Support) de Ubuntu ofrecen hasta cinco años de soporte, incluyendo actualizaciones de seguridad, lo que es crucial para el desarrollo de aplicaciones a largo plazo.<br />
-<br />
-            <strong>Herramientas de Desarrollo</strong><br />
+        <div>
+            <LayoutComponent className="container mx-auto text-center px-10 flex h-full flex-col py-2 !h-auto">
+                <h1 className="text-4xl font-bold text-gray-800">Distribuciones linux</h1>
+                <p className="text-gray-600 mt-8 mb-8">
+                    Las distribuciones de Linux (o "distros") son versiones personalizadas del sistema
+                    operativo Linux que incluyen el núcleo de Linux junto con una combinación de
+                    software, herramientas y configuraciones específicas. Cada distribución está diseñada
+                    con un propósito particular, ofreciendo diferentes entornos de usuario, niveles de
+                    personalización y paquetes de software. Algunas distribuciones populares incluyen
+                    Ubuntu, Debian, Fedora y Arch Linux.
+                </p>
+                <Swipper>
+                    {distros.map((distro) => (
+                        <div key={distro.title} className="h-full w-full flex justify-center align-center p-10">
+                            <Card>
+                                <Card.CardImg src={distro.img} alt={distro.title.toLowerCase() + ' background'} />
+                                <div className="px-6 py-4">
+                                    <Card.Title>{distro.title}</Card.Title>
+                                    <Card.CardDescription>
+                                        {distro.content}
+                                    </Card.CardDescription>
+                                </div>
+                                <Card.CardFooter tags={distro.tags} />
+                            </Card>
+                        </div>
+                    ))}
+                </Swipper>
+            </LayoutComponent>
+            <LayoutComponent className="!h-auto bg-white shadow-lg py-12">
+                <div className="h-screen w-full flex py-20 flex-col">
+                    <h2 className="text-3xl text-center font-semibold mb-12">Nuestra Eleccion</h2>
+                    <p className="text-center mb-12">
+                        Ambos integrantes del grupo usamos ubuntu como sistema operativo para
+                        desempeñar nuestro trabajo. Ubuntu es una de las distribuciones de Linux más
+                        populares y es ampliamente preferida por desarrolladores de software debido a su
+                        facilidad de uso, estabilidad, y robusto soporte para herramientas de desarrollo. Hay
+                        varias razones por las cuales se preferimos trabajar con Ubuntu en lugar de otras
+                        distribuciones, y cada una representa una ventaja significativa en el entorno de
+                        desarrollo de software.
+                    </p>
+                </div>
+                {caracteristicasUbuntu.map((feature, index) => (
+                        <ImageDescriptionSection 
+                            key={index}
+                            src={feature.img}
+                            alt={feature.title}
+                            className={index % 2 ? 'sm:flex-row' : 'sm:flex-row-reverse'}
+                        >
+                            <h3 className="text-xl font-bold" key="title">{feature.title}</h3>
+                            <p key="description">{feature.description}</p>
+                            <a href={feature.link.href} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline" key="link">
+                                {feature.link.label}
+                            </a>
+                        </ImageDescriptionSection>
+                    )
+                )}
+            </LayoutComponent>
+            <LayoutComponent className="bg-slate-200 !h-auto">
+                <div className="flex flex-col w-full h-full text-center align-center justify-evenly">
+                    <h2 className="text-2xl font-bold">Ventajas de ubuntu para el desarrollo de software</h2>
+                    <section className="flex flex-col align-center justify-center space-x-12 sm:flex-row">
+                        {ventajasUbuntu.map((ventaja) => (
+                            <Card key={ventaja.title} className="p-8">
+                                <Card.Title>
+                                    {ventaja.title}
+                                </Card.Title>
+                                <Card.CardImg src={ventaja.img.src} alt={ventaja.img.alt} />
+                                <Card.CardDescription>
+                                    {ventaja.description}
+                                </Card.CardDescription>
+                            </Card>
+                        ))}
+                    </section>
+                </div>
+            </LayoutComponent>
+            <LayoutComponent className="!h-auto">
+                <DeveloperTools />
+            </LayoutComponent>
 
-            En un entorno Ubuntu, se suelen instalar varias herramientas esenciales para el desarrollo:<br />
-            <strong>•	Visual Studio Code:</strong> Un editor de código fuente ligero pero poderoso, que soporta múltiples lenguajes de programación y tiene una vasta biblioteca de extensiones.<br />
-            <strong>•	Git:</strong> Para el control de versiones, una herramienta indispensable en cualquier flujo de trabajo de desarrollo moderno.<br />
-            <strong>•	Docker: </strong>Ideal para crear, desplegar y ejecutar aplicaciones mediante contenedores, lo que facilita la gestión de dependencias y la replicación de entornos.<br />
-            <strong>•	Postman: </strong>Para el desarrollo y prueba de APIs.<br />
-
-            <strong>Entorno de Escritorio</strong>
-            •<strong>	GNOME:</strong> Ubuntu utiliza GNOME por defecto. Este entorno de escritorio es conocido por su enfoque en la simplicidad y eficiencia, proporcionando una experiencia de usuario limpia y funcional que puede ser ampliamente personalizada para adaptarse a las necesidades de cualquier desarrollador.
-<br></br>
-<br />
-            <strong>•Para una Familia: Linux Mint</strong><br />
-
-           <strong> Justificación y Ventajas</strong><br />
-
-            Linux Mint es una excelente elección para una familia con estudiantes de nivel primario y secundario. Es famoso por su estabilidad y por ofrecer una experiencia de usuario similar a Windows, lo que reduce la curva de aprendizaje para aquellos que no están familiarizados con Linux.<br />
-            <strong>• Facilidad de Uso:</strong> Linux Mint es fácil de usar, con un menú claro y opciones de configuración accesibles, ideal para usuarios no técnicos.<br />
-            <strong>• Estabilidad y Seguridad:</strong> Al estar basado en Ubuntu, Linux Mint hereda su robustez y seguridad, asegurando un entorno confiable para el uso diario.<br />
-<br />
-            <strong>Aplicaciones Educativas</strong><br />
-
-            Para apoyar el aprendizaje en casa, se pueden instalar varias aplicaciones educativas en Linux Mint:<br />
-            <strong>• GCompris:</strong> Un software educativo que proporciona diferentes actividades para niños entre 2 y 10 años, abarcando áreas desde matemáticas hasta ciencia.<br />
-            <strong>• Khan Academy:</strong> A través de la instalación de aplicaciones que faciliten el acceso a recursos en línea como Khan Academy, los estudiantes pueden aprovechar tutoriales y lecciones en una amplia gama de temas.<br />
-            <strong>• LibreOffice: </strong>Una suite de oficina completa que es compatible con documentos de Microsoft Office, ideal para la realización de tareas escolares y proyectos.<br />
-<br />
-            <strong>Entorno de Escritorio</strong><br />
-            <strong>• Cinnamon:</strong> Es el entorno de escritorio predeterminado de Linux Mint y ofrece una experiencia similar a la de Windows, con una barra de tareas y un menú de inicio, lo que lo hace fácil de entender y utilizar para toda la familia.
-            </p>
-        </main>
+            <LayoutComponent className="!h-auto">
+                <HPCComponent />
+            </LayoutComponent>
+        </div>
     );
 }
 
-export default CasosDeUso;
+export default UseCase;
